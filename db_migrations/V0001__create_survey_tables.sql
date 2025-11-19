@@ -1,0 +1,19 @@
+CREATE TABLE IF NOT EXISTS survey_responses (
+  id SERIAL PRIMARY KEY,
+  city VARCHAR(255) NOT NULL,
+  age VARCHAR(50) NOT NULL,
+  work_hours VARCHAR(255) NOT NULL,
+  has_card VARCHAR(10) NOT NULL,
+  gender VARCHAR(20) NOT NULL,
+  name VARCHAR(255) NOT NULL,
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE IF NOT EXISTS admin_settings (
+  id SERIAL PRIMARY KEY,
+  password_hash VARCHAR(255) NOT NULL
+);
+
+INSERT INTO admin_settings (password_hash) 
+VALUES ('$2b$10$rC3qX5qX5qX5qX5qX5qX5eH5qX5qX5qX5qX5qX5qX5qX5qX5qX5qX')
+ON CONFLICT (id) DO NOTHING;

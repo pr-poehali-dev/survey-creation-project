@@ -1,0 +1,13 @@
+{
+  "tests": [
+    {
+      "name": "Get responses with valid password",
+      "method": "GET",
+      "path": "/",
+      "headers": {
+        "X-Admin-Password": "admin123"
+      },
+      "expectedStatus": 200
+    }
+  ]
+}

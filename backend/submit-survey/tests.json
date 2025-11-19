@@ -1,0 +1,22 @@
+{
+  "tests": [
+    {
+      "name": "Submit survey response",
+      "method": "POST",
+      "path": "/",
+      "body": {
+        "city": "Москва",
+        "age": "25",
+        "workHours": "8 часов",
+        "hasCard": "yes",
+        "gender": "male",
+        "name": "Иван"
+      },
+      "expectedStatus": 200,
+      "expectedBody": {
+        "success": true
+      },
+      "bodyMatcher": "partial"
+    }
+  ]
+}
