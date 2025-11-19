@@ -96,21 +96,21 @@ const Index = () => {
       <div className="min-h-screen flex items-center justify-center p-4 bg-gradient-to-br from-purple-500 via-pink-500 to-orange-400">
         <Card className="w-full max-w-2xl p-8 md:p-12 text-center animate-fade-in">
           <div className="mb-8">
-            <div className="w-20 h-20 mx-auto mb-6 bg-gradient-to-br from-purple-500 to-pink-500 rounded-full flex items-center justify-center">
+            <div className="w-20 h-20 mx-auto mb-6 bg-blue-600 rounded-full flex items-center justify-center">
               <Icon name="Check" size={40} className="text-white" />
             </div>
-            <h1 className="text-3xl md:text-4xl font-bold mb-4 bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
+            <h1 className="text-3xl md:text-4xl font-semibold mb-4 text-gray-900">
               Спасибо за ваши ответы!
             </h1>
             <div className="text-lg md:text-xl text-gray-700 space-y-3 mb-8">
               <p>Ваши данные успешно отправлены.</p>
-              <p className="font-semibold">Вот мой телеграмм: <a href="https://t.me/telecommute1" target="_blank" rel="noopener noreferrer" className="text-purple-600 hover:text-pink-600 transition-colors">@telecommute1</a></p>
+              <p className="font-medium">Вот мой телеграмм: <a href="https://t.me/telecommute1" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:text-blue-700 transition-colors underline">@telecommute1</a></p>
               <p>Пишите мне для получения Сертификата</p>
             </div>
           </div>
           <Button 
             onClick={() => window.location.reload()} 
-            className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-8"
+            className="bg-blue-600 hover:bg-blue-700 text-white px-8"
           >
             Начать заново
           </Button>
@@ -120,22 +120,22 @@ const Index = () => {
   }
 
   return (
-    <div className="min-h-screen flex items-center justify-center p-4 bg-gradient-to-br from-purple-500 via-pink-500 to-orange-400 relative">
+    <div className="min-h-screen flex items-center justify-center p-4 bg-gray-50 relative">
       <button
         onClick={() => setShowAdmin(true)}
-        className="absolute top-4 right-4 p-2 rounded-lg bg-white/20 hover:bg-white/30 transition-colors"
+        className="absolute top-4 right-4 p-2 rounded-lg bg-white border border-gray-200 hover:bg-gray-50 transition-colors shadow-sm"
         aria-label="Админка"
       >
-        <Icon name="Settings" size={24} className="text-white" />
+        <Icon name="Settings" size={24} className="text-gray-700" />
       </button>
 
       <Card className="w-full max-w-2xl p-8 md:p-12">
         <div className="mb-8">
           <div className="flex items-center justify-between mb-4">
-            <h2 className="text-2xl md:text-3xl font-bold bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
+            <h2 className="text-2xl md:text-3xl font-semibold text-gray-900">
               Опрос
             </h2>
-            <span className="text-sm font-semibold text-gray-600">
+            <span className="text-sm font-medium text-gray-500">
               {step} из {totalSteps}
             </span>
           </div>
@@ -146,7 +146,7 @@ const Index = () => {
           {step === 1 && (
             <div className="space-y-4">
               <Label htmlFor="city" className="text-lg font-semibold">
-                <Icon name="MapPin" size={24} className="inline mr-2 text-purple-600" />
+                <Icon name="MapPin" size={24} className="inline mr-2 text-blue-600" />
                 Ваш город
               </Label>
               <Input
@@ -162,7 +162,7 @@ const Index = () => {
           {step === 2 && (
             <div className="space-y-4">
               <Label htmlFor="age" className="text-lg font-semibold">
-                <Icon name="Calendar" size={24} className="inline mr-2 text-purple-600" />
+                <Icon name="Calendar" size={24} className="inline mr-2 text-blue-600" />
                 Ваш возраст
               </Label>
               <Input
@@ -179,7 +179,7 @@ const Index = () => {
           {step === 3 && (
             <div className="space-y-4">
               <Label htmlFor="workHours" className="text-lg font-semibold">
-                <Icon name="Clock" size={24} className="inline mr-2 text-purple-600" />
+                <Icon name="Clock" size={24} className="inline mr-2 text-blue-600" />
                 Сколько сможете работать в день?
               </Label>
               <Input
@@ -195,15 +195,15 @@ const Index = () => {
           {step === 4 && (
             <div className="space-y-4">
               <Label className="text-lg font-semibold">
-                <Icon name="CreditCard" size={24} className="inline mr-2 text-purple-600" />
+                <Icon name="CreditCard" size={24} className="inline mr-2 text-blue-600" />
                 Есть ли у вас банковская карта?
               </Label>
               <RadioGroup value={formData.hasCard} onValueChange={(value) => updateFormData('hasCard', value)}>
-                <div className="flex items-center space-x-3 p-4 rounded-lg border-2 hover:border-purple-400 transition-colors cursor-pointer">
+                <div className="flex items-center space-x-3 p-4 rounded-lg border-2 hover:border-blue-400 transition-colors cursor-pointer">
                   <RadioGroupItem value="yes" id="card-yes" />
                   <Label htmlFor="card-yes" className="text-lg cursor-pointer flex-1">Да</Label>
                 </div>
-                <div className="flex items-center space-x-3 p-4 rounded-lg border-2 hover:border-purple-400 transition-colors cursor-pointer">
+                <div className="flex items-center space-x-3 p-4 rounded-lg border-2 hover:border-blue-400 transition-colors cursor-pointer">
                   <RadioGroupItem value="no" id="card-no" />
                   <Label htmlFor="card-no" className="text-lg cursor-pointer flex-1">Нет</Label>
                 </div>
@@ -214,15 +214,15 @@ const Index = () => {
           {step === 5 && (
             <div className="space-y-4">
               <Label className="text-lg font-semibold">
-                <Icon name="User" size={24} className="inline mr-2 text-purple-600" />
+                <Icon name="User" size={24} className="inline mr-2 text-blue-600" />
                 Ваш пол
               </Label>
               <RadioGroup value={formData.gender} onValueChange={(value) => updateFormData('gender', value)}>
-                <div className="flex items-center space-x-3 p-4 rounded-lg border-2 hover:border-purple-400 transition-colors cursor-pointer">
+                <div className="flex items-center space-x-3 p-4 rounded-lg border-2 hover:border-blue-400 transition-colors cursor-pointer">
                   <RadioGroupItem value="male" id="gender-male" />
                   <Label htmlFor="gender-male" className="text-lg cursor-pointer flex-1">Мужской</Label>
                 </div>
-                <div className="flex items-center space-x-3 p-4 rounded-lg border-2 hover:border-purple-400 transition-colors cursor-pointer">
+                <div className="flex items-center space-x-3 p-4 rounded-lg border-2 hover:border-blue-400 transition-colors cursor-pointer">
                   <RadioGroupItem value="female" id="gender-female" />
                   <Label htmlFor="gender-female" className="text-lg cursor-pointer flex-1">Женский</Label>
                 </div>
@@ -233,7 +233,7 @@ const Index = () => {
           {step === 6 && (
             <div className="space-y-4">
               <Label htmlFor="name" className="text-lg font-semibold">
-                <Icon name="UserCircle" size={24} className="inline mr-2 text-purple-600" />
+                <Icon name="UserCircle" size={24} className="inline mr-2 text-blue-600" />
                 Ваше имя
               </Label>
               <Input
@@ -260,7 +260,7 @@ const Index = () => {
           )}
           <Button
             onClick={handleNext}
-            className="flex-1 bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white text-lg py-6"
+            className="flex-1 bg-blue-600 hover:bg-blue-700 text-white text-lg py-6"
           >
             {step === totalSteps ? 'Отправить' : 'Далее'}
             {step < totalSteps && <Icon name="ChevronRight" size={20} className="ml-2" />}
@@ -316,7 +316,7 @@ const AdminPanel = ({ onBack }: { onBack: () => void }) => {
 
   if (!isAuthenticated) {
     return (
-      <div className="min-h-screen flex items-center justify-center p-4 bg-gradient-to-br from-purple-500 via-pink-500 to-orange-400">
+      <div className="min-h-screen flex items-center justify-center p-4 bg-gray-50">
         <Card className="w-full max-w-md p-8">
           <button
             onClick={onBack}
@@ -325,7 +325,7 @@ const AdminPanel = ({ onBack }: { onBack: () => void }) => {
             <Icon name="ArrowLeft" size={20} className="mr-2" />
             Назад
           </button>
-          <h2 className="text-2xl font-bold mb-6 text-center">Вход в админку</h2>
+          <h2 className="text-2xl font-semibold mb-6 text-center text-gray-900">Вход в админку</h2>
           <div className="space-y-4">
             <Input
               type="password"
@@ -337,7 +337,7 @@ const AdminPanel = ({ onBack }: { onBack: () => void }) => {
             />
             <Button
               onClick={handleLogin}
-              className="w-full bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white py-6"
+              className="w-full bg-blue-600 hover:bg-blue-700 text-white py-6"
             >
               Войти
             </Button>
@@ -348,7 +348,7 @@ const AdminPanel = ({ onBack }: { onBack: () => void }) => {
   }
 
   return (
-    <div className="min-h-screen p-4 bg-gradient-to-br from-purple-500 via-pink-500 to-orange-400">
+    <div className="min-h-screen p-4 bg-gray-50">
       <div className="max-w-6xl mx-auto">
         <Card className="p-6 mb-4">
           <div className="flex items-center justify-between">
@@ -359,7 +359,7 @@ const AdminPanel = ({ onBack }: { onBack: () => void }) => {
               <Icon name="ArrowLeft" size={20} className="mr-2" />
               Назад
             </button>
-            <h1 className="text-2xl font-bold">Результаты опроса</h1>
+            <h1 className="text-2xl font-semibold text-gray-900">Результаты опроса</h1>
             <span className="text-gray-600">Всего: {responses.length}</span>
           </div>
         </Card>
